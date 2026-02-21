@@ -3,5 +3,5 @@ using UnityEngine;
 
 public class UnityBlackjackClient : MonoBehaviour
 {
-    private static BlackjackClient Instance { get; } = new BlackjackClient();
+    public static BlackjackClient Instance { get; } = new BlackjackClient();
 }
