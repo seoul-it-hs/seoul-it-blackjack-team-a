@@ -10,20 +10,15 @@ public class MainMenu : MonoBehaviour
     public Button RoomIn;
 
     public static string user;
+    public static string dealerkey;
     
-    void Start()    
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
 
     public void OnClickRoomIn()
     {
-        Debug.Log("ID: " + ID);
-        Debug.Log("DealerKey: " + DealerKey);
+        user = ID.text.ToString();
+        dealerkey = DealerKey.text.ToString();
+        Debug.Log("ID: " + user);
+        Debug.Log("DealerKey: " + dealerkey);
 
         if (ID == null)
         {
