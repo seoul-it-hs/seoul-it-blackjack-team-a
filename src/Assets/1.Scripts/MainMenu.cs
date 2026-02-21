@@ -5,8 +5,8 @@ using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
-    public static TMP_InputField ID;
-    public static TMP_InputField DealerKey;
+    public TMP_InputField ID;
+    public TMP_InputField DealerKey;
     public Button RoomIn;
 
     public static string user;
@@ -22,10 +22,23 @@ public class MainMenu : MonoBehaviour
 
     public void OnClickRoomIn()
     {
-        if(ID.text != null)
+        Debug.Log("ID: " + ID);
+        Debug.Log("DealerKey: " + DealerKey);
+
+        if (ID == null)
         {
-            user = ID.text.ToString();
+            Debug.LogError("ID is NULL");
+            return;
+        }
+
+        if (!string.IsNullOrEmpty(ID.text))
+        {
+            user = ID.text;
             SceneManager.LoadScene("Waiting_Room");
+        }
+        else
+        {
+            Debug.Log("아이디 입력해");
         }
     }
 }
